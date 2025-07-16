@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+<html>
+	<head>
+		<title>Seção 3 - Introdução ao ggplot2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrando o R ao Power BI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <title>Introdução ao ggplot2</title>
+    <style>
+      code { 
+        background-color: #f4f4f4; 
+        padding: 2px 4px; 
+        border-radius: 4px; 
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 8px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+  
+  <h1>Contextualização</h1>
+  <p>O <strong>ggplot2</strong> é um dos pacotes mais populares para visualização de dados em R. Ele segue a abordagem <em>Grammar of Graphics</em>, proposta por Hadley Wickham, que organiza a criação de gráficos de uma maneira estruturada e flexível. Isso permite criar visualizações complexas de maneira intuitiva e clara. Nesta seção, será explorada a construção de gráficos em R com o <strong>ggplot2</strong>. Serão abordados:</p>
+  <ul>
+    <li>Gráficos de dispersão</li>
+    <li>Gráficos de linha</li>
+    <li>Box-plot</li>
+    <li>Diferença entre dotplot e gráfico de dispersão</li>
+  </ul>
+  
+  <h2>1. Estrutura básica do ggplot2</h2>
+  <p>O pacote ggplot2 no R utiliza uma estrutura baseada em camadas. Para criar um gráfico você precisa de:</p>
+  <ul>
+    <li>Um conjunto de dados.</li>
+    <li>Um mapeamento estético <strong>aes</strong> que define quais variáveis vão para os eixos X e Y.</li>
+  </ul>
+  
+  <h3>Definir o objeto inicial (<code>ggplot()</code>)</h3>
+  <p>O primeiro passo é criar um objeto ggplot, definindo os dados e o mapeamento estético (variáveis que serão representadas graficamente).</p>
+  <pre><code>ggplot(data = seu_dataset, aes(x = variavel_x, y = variavel_y))</code></pre>
+  
+  <h3>Adicionar camadas geométricas (<code>geom_*</code>)</h3>
+  <p>As camadas geométricas definem como os dados serão representados (pontos, linhas, barras, etc.).</p>
+  <pre><code>+ geom_point()   # Para gráficos de dispersão
+  + geom_line()    # Para gráficos de linhas
+  + geom_bar()     # Para gráficos de barras
+  </code></pre>
+  
+  <h3>Personalizar escalas e eixos (<code>scale_*</code> e <code>labs()</code>)</h3>
+  <pre><code>+ labs(title = "Título do Gráfico", x = "Eixo X", y = "Eixo Y")
+  + scale_y_log10()
+  </code></pre>
+  
+  <h3>Modificar temas (<code>theme_*</code>)</h3>
+  <pre><code>+ theme_minimal()
+  + theme_bw()
+  </code></pre>
+  
+  <h3>Facetas (<code>facet_*</code>)</h3>
+  <pre><code>+ facet_wrap(~ categoria)
+  + facet_grid(linhas ~ colunas)
+  </code></pre>
+  
+  <h4>Principais funções do ggplot2:</h4>
+  <ul>
+    <li><code>ggplot()</code>: Cria o objeto inicial do gráfico.</li>
+    <li><code>aes()</code>: Define o mapeamento estético.</li>
+    <li><code>geom_*()</code>: Adiciona camadas geométricas.</li>
+    <li><code>scale_*()</code>: Personaliza escalas.</li>
+    <li><code>theme_*()</code>: Modifica o tema.</li>
+    <li><code>facet_*()</code>: Divide o gráfico em facetas.</li>
+  </ul>
+  
+  <h2>2. Gráfico de dispersão</h2>
+  <p>Gráficos de dispersão no ggplot2 são usados para visualizar a relação entre duas variáveis contínuas.</p>
+  <pre><code>library(ggplot2)
+  
+  data &lt;- data.frame(
+    x = rnorm(100),
+    y = rnorm(100)
+  )
+  
+  ggplot(data, aes(x = x, y = y)) +
+    geom_point() +
+    labs(title = "Gráfico de Dispersão", x = "Eixo X", y = "Eixo Y")
+  </code></pre>
+  
+  <h3>Personalizações Comuns</h3>
+  <h4>Alterar cores e tamanhos dos pontos</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_point(color = "blue", size = 3)
+  </code></pre>
+  
+  <h4>Colorir com base em uma variável categórica</h4>
+  <pre><code>data$category &lt;- sample(c("A", "B", "C"), 100, replace = TRUE)
+  
+  ggplot(data, aes(x = x, y = y, color = category)) +
+    geom_point()
+  </code></pre>
+  
+  <h4>Adicionar tendência ou linha de ajuste</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_point() +
+    geom_smooth(method = "lm", color = "red")
+  </code></pre>
+  
+  <h4>Facets (painéis para categorias)</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_point() +
+    facet_wrap(~category)
+  </code></pre>
+  
+  <h3>Dicas para Gráficos de Dispersão</h3>
+  <ul>
+    <li>Use <code>labs()</code> e <code>theme()</code> para tornar o gráfico mais apresentável.</li>
+    <li>Use <code>scale_x_log10()</code> ou <code>scale_y_log10()</code> se necessário.</li>
+    <li>Adicione legenda se usar cores ou tamanhos para categorizar.</li>
+  </ul>
+  
+  <h2>3. Gráfico de linha</h2>
+  <p>Gráficos de linha no ggplot2 são úteis para séries temporais ou relações ao longo do tempo.</p>
+  <pre><code>library(ggplot2)
+  
+  data &lt;- data.frame(
+    x = 1:10,
+    y = cumsum(rnorm(10))
+  )
+  
+  ggplot(data, aes(x = x, y = y)) +
+    geom_line() +
+    labs(title = "Gráfico de Linha", x = "Eixo X", y = "Eixo Y")
+  </code></pre>
+  
+  <h3>Personalizações Comuns</h3>
+  <h4>Estilizar Linhas</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_line(color = "blue", linetype = "dashed", size = 1.2)
+  </code></pre>
+  
+  <p><strong>Tipos de linhas:</strong></p>
+  <p align="center">
+    <img src="images/Figura11.png" alt="Tipos de linhas">
+  </p>
+  
+  <h4>Adicionar pontos</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_line(color = "blue") +
+    geom_point(color = "red", size = 3)
+  </code></pre>
+  
+  <p><strong>Tipos de pontos:</strong></p>
+  <p align="center">
+    <img src="images/Figura13.png" alt="Tipos de pontos">
+  </p>
+  
+  <h4>Linhas para diferentes grupos</h4>
+  <pre><code>data &lt;- data.frame(
+    x = rep(1:10, 3),
+    y = cumsum(rnorm(30)),
+    group = rep(c("A", "B", "C"), each = 10)
+  )
+  
+  ggplot(data, aes(x = x, y = y, color = group)) +
+    geom_line() +
+    labs(title = "Gráfico de Linha com Grupos")
+  </code></pre>
+  
+  <h4>Adicionar Linha de Referência</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y, color = group)) +
+    geom_line() +
+    geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
+    geom_vline(xintercept = 5, linetype = "dotted", color = "red") +
+    labs(title = "Gráfico com Linhas de Referência")
+  </code></pre>
+  
+  <h4>Facets por categoria</h4>
+  <pre><code>ggplot(data, aes(x = x, y = y)) +
+    geom_line() +
+    facet_wrap(~group) +
+    labs(title = "Facets por Grupo")
+  </code></pre>
+  
+  <h3>Dicas para Gráficos de Linha</h3>
+  <ul>
+    <li>Use <code>geom_text()</code> ou <code>geom_label()</code> para destacar pontos.</li>
+    <li>Combine com <code>geom_smooth()</code> para tendência.</li>
+    <li>Use <code>theme_minimal()</code> ou <code>theme_classic()</code> para estética.</li>
+  </ul>
+  
+  <h2>4. Gráfico de box-plot</h2>
+  <p>O box-plot resume a distribuição de dados, destacando mediana, quartis e possíveis outliers.</p>
+  <p><strong>Estrutura do box-plot:</strong></p>
+  <ul>
+    <li>Linha central: mediana</li>
+    <li>Caixa: 1º e 3º quartis</li>
+    <li>Bigodes: valores dentro de 1,5x IQR</li>
+    <li>Outliers: pontos fora dos bigodes</li>
+  </ul>
+  
+  <p align="center">
+    <img src="images/Figura12.png" alt="Boxplot">
+  </p>
+  
+  <pre><code>library(ggplot2)
+  
+  data &lt;- data.frame(
+    categoria = rep(c("A", "B", "C"), each = 50),
+    valor = c(rnorm(50, 5), rnorm(50, 7), rnorm(50, 6))
+  )
+  
+  ggplot(data, aes(x = categoria, y = valor)) +
+    geom_boxplot() +
+    labs(title = "Box-Plot Básico", x = "Categoria", y = "Valores")
+  </code></pre>
+  
+  <h3>Personalizações Comuns</h3>
+  <h4>Cores</h4>
+  <pre><code>ggplot(data, aes(x = categoria, y = valor, fill = categoria)) +
+    geom_boxplot(color = "black") +
+    labs(title = "Box-Plot com Cores Personalizadas")
+  </code></pre>
+  
+  <h4>Mostrar Outliers</h4>
+  <pre><code>ggplot(data, aes(x = categoria, y = valor)) +
+    geom_boxplot(outlier.color = "red", outlier.size = 3) +
+    labs(title = "Box-Plot com Outliers Destacados")
+  </code></pre>
+  
+  <h4>Adicionar Posição</h4>
+  <pre><code>data$grupo &lt;- rep(c("G1", "G2"), each = 75)
+  
+  ggplot(data, aes(x = categoria, y = valor, fill = grupo)) +
+    geom_boxplot(position = position_dodge(0.8)) +
+    labs(title = "Box-Plot com Grupos")
+  </code></pre>
+  
+  <h4>Adicionar Pontos</h4>
+  <pre><code>ggplot(data, aes(x = categoria, y = valor)) +
+    geom_boxplot() +
+    geom_jitter(width = 0.2, alpha = 0.5, color = "blue") +
+    labs(title = "Box-Plot com Pontos Jitter")
+  </code></pre>
+  
+  <h4>Facets</h4>
+  <pre><code>ggplot(data, aes(x = categoria, y = valor)) +
+    geom_boxplot() +
+    facet_wrap(~grupo) +
+    labs(title = "Box-Plot por Grupos")
+  </code></pre>
+  
+  <h3>Dicas para Gráficos de Box-plot</h3>
+  <ul>
+    <li>Combine com <code>geom_violin()</code> para detalhar densidade.</li>
+    <li>Rote os rótulos do eixo X para melhorar legibilidade:
+      <pre><code>theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
+    </li>
+  </ul>
+  
+  <h2>Diferenças entre Dotplot e Gráfico de dispersão</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Aspecto</th>
+        <th>Dot Plot</th>
+        <th>Gráfico de Dispersão</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Finalidade</td>
+        <td>Mostrar frequências ou distribuições</td>
+        <td>Mostrar relação entre duas variáveis</td>
+      </tr>
+      <tr>
+        <td>Eixos</td>
+        <td>Geralmente um eixo é categórico</td>
+        <td>Ambos os eixos são contínuos</td>
+      </tr>
+      <tr>
+        <td>Visualização</td>
+        <td>Pontos empilhados para mostrar frequência</td>
+        <td>Posição indica valores específicos</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <div class="contact">   
+
+
+</body>
+</html>

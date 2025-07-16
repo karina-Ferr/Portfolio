@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+<html>
+	<head>
+		<title>Seção 4 - Transformação de dados</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrando o R ao Power BI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Transformação de dados</h1>
+
+  <p style="text-align: center;">
+    <img src="images/Figura14.png" alt="Getting Started">
+  </p>
+  
+  <h2>Contextualização</h2>
+  <p>
+    A <strong>transformação de dados ecológicos</strong> é um passo essencial nas análises estatísticas porque ajuda a ajustar os dados às suposições dos métodos analíticos, realçando padrões ecológicos relevantes e minimizando distorções.
+  </p>
+  
+  <h3>Por que transformar dados ecológicos?</h3>
+  <ul>
+    <li>🔄 <strong>Reduzir viés de espécies dominantes</strong>: Em comunidades ecológicas, poucas espécies costumam dominar em abundância, enquanto a maioria é rara. Dessa forma, a transformação dos dados torna-se fundamental para a análise desse conjunto.</li>
+    <li>📏 <strong>Adequar os dados aos pressupostos estatísticos</strong>: Muitos métodos multivariados assumem linearidade ou normalidade nos dados. Aplicar transformações (ex.: logarítmica ou raiz quadrada) pode corrigir essas distorções e melhorar a robustez dos resultados.</li>
+    <li>⚖️ <strong>Tornar as variáveis comparáveis</strong>: Dados ecológicos podem envolver variáveis em escalas diferentes (ex.: abundância, biomassa, pH). Variáveis com maiores magnitudes podem dominar análises multivariadas. Padronizações como z-score (média 0, desvio padrão 1) ou <code>decostand(method = "standardize")</code> garantem que todas as variáveis tenham o mesmo peso.</li>
+  </ul>
+  
+  <h2>1. Métodos estatísticos Escalares e Vetoriais</h2>
+  <p>
+    Os métodos estatísticos escalares e vetoriais diferem na forma como tratam e analisam os dados, especialmente em relação à complexidade e dimensionalidade das variáveis.
+  </p>
+  
+  <h3>1.1 Transformações Escalares</h3>
+  <p style="text-align: center;">
+    <img src="images/Figura15.png" alt="Figura 15">
+  </p>
+  <p><strong>Figura 2.</strong> No conjunto de dados quantitativos contínuos, destaca-se em vermelho a aplicação da transformação escalar.</p>
+  
+  <p><strong>Definição:</strong> Trabalham com variáveis individuais (escalares), ou seja, dados unidimensionais que podem ser representados por um único valor numérico por observação. Essas transformações são aplicadas individualmente a cada valor ou variável sem considerar o contexto geral dos dados.</p>
+  
+  <p><strong>Exemplos de técnicas:</strong></p>
+  <ul>
+    <li><strong>Logaritmo (log, log10, log1p)</strong> – para reduzir a escala de dados e lidar com distribuições assimétricas.</li>
+    <li><strong>Raiz quadrada ou cúbica</strong> – para normalizar dados assimétricos.</li>
+    <li><strong>Inverso (1/x)</strong> – para ajustar distribuições muito enviesadas.</li>
+    <li><strong>Transformações Box-Cox/Yeo-Johnson</strong> – para estabilizar variância e aproximar a normalidade.</li>
+  </ul>
+  <p>🧠 <strong>Aplicação:</strong> úteis para ajustar variáveis individuais e melhorar análises como regressões ou ANOVA.</p>
+  
+  <h3>1.2 Transformações Vetoriais</h3>
+  <p style="text-align: center;">
+    <img src="images/Figura16.png" alt="Figura 16">
+  </p>
+  <p><strong>Figura 3.</strong> No conjunto de dados quantitativos contínuos, destaca-se em vermelho a aplicação da transformação vetorial.</p>
+  
+  <p><strong>Definição:</strong> Aqui as transformações consideram o conjunto de dados ou as relações entre variáveis, alterando a estrutura geral.</p>
+  
+  <p><strong>Exemplos de técnicas:</strong></p>
+  <ul>
+    <li><strong>Padronização (Standardization)</strong> – transforma dados para média 0 e desvio padrão 1.</li>
+    <li><strong>Normalização (Min-Max Scaling)</strong> – escala os dados entre 0 e 1.</li>
+  </ul>
+  <p>🧠 <strong>Aplicação:</strong> essenciais em análises multivariadas, quando as relações entre variáveis importam, como clustering ou modelagem preditiva.</p>
+  
+  <h3>1.3 Quando usar cada um?</h3>
+  <ul>
+    <li><strong>Escalares:</strong> quando você quer transformar cada variável de forma independente para corrigir assimetrias ou variâncias.</li>
+    <li><strong>Vetoriais:</strong> quando o objetivo é alinhar todas as variáveis, corrigir escalas diferentes ou reduzir dimensionalidade.</li>
+  </ul>
+  
+  <h2>2. Transformação de dados ecológicos no R</h2>
+  <p>Usar <strong>R</strong> para realizar transformações ecológicas oferece uma série de vantagens, especialmente para análise de dados de biodiversidade, distribuição de espécies ou monitoramento ambiental.</p>
+  
+  <h3>🔸 Pacotes especializados em Ecologia</h3>
+  <p>O <strong>R</strong> possui pacotes específicos como <strong>vegan</strong>, <strong>ecodist</strong>, <strong>sp</strong>, <strong>raster</strong> e <strong>dismo</strong>, amplamente usados na comunidade científica.</p>
+  
+  <h3>🔸 Capacidade de Manipulação de Dados</h3>
+  <p>O <strong>R</strong> conta com pacotes como <strong>dplyr</strong> e <strong>tidyr</strong>, facilitando a transformação e limpeza de grandes volumes de dados ecológicos.</p>
+  
+  <h3>🔸 Facilidade de Visualização</h3>
+  <p>Pacotes como <strong>ggplot2</strong> e <strong>lattice</strong> permitem a visualização clara das transformações aplicadas.</p>
+  
+  <h3>🔸 Análises Estatísticas Avançadas</h3>
+  <p>O <strong>R</strong> permite análises como índices de diversidade, SDMs, transformações e modelagem multivariada, otimizando a interpretação dos padrões ecológicos.</p>
+  
+  <h3>2.1 Transformações de Dados no <em>vegan</em></h3>
+  <p>O pacote <strong>vegan</strong> fornece funções para transformar dados de comunidades ecológicas e facilitar análises multivariadas.</p>
+  <p style="text-align: center;">
+    <img src="images/Figura17.png" alt="Figura 17" style="width:20%;">
+  </p>
+  
+  <p><strong>Função decostand():</strong></p>
+  <pre><code>decostand(data, method = "method_name", MARGIN = 1)</code></pre>
+  <p>
+    <strong>data</strong>: matriz de dados (amostras x espécies) <br>
+    <strong>method</strong>: método de padronização ou transformação <br>
+    <strong>MARGIN</strong>: 1 para linhas, 2 para colunas
+  </p>
+  
+  <h4>Métodos comuns:</h4>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Método</th>
+      <th>Descrição</th>
+    </tr>
+    <tr><td>total</td><td>Divide pelo total de cada amostra (proporção).</td></tr>
+    <tr><td>max</td><td>Divide pelo valor máximo.</td></tr>
+    <tr><td>range</td><td>Normaliza para [0,1].</td></tr>
+    <tr><td>standardize</td><td>Padroniza para média 0 e desvio padrão 1.</td></tr>
+    <tr><td>normalize</td><td>Normaliza para comprimento unitário.</td></tr>
+    <tr><td>hellinger</td><td>Raiz quadrada das proporções.</td></tr>
+    <tr><td>log</td><td>Aplica log(x+1).</td></tr>
+    <tr><td>pa</td><td>Presença/Ausência.</td></tr>
+  </table>
+  
+  <h4>Exemplo:</h4>
+  <pre><code>library(vegan)
+  data(dune)
+  dune_hell <- decostand(dune, method = "hellinger")</code></pre>
+  
+  <h4>Transformações usuais:</h4>
+  <ul>
+    <li><strong>Hellinger</strong>: ideal para dados de abundância com muitos zeros.</li>
+    <li><strong>Log(x+1)</strong>: reduz assimetrias.</li>
+    <li><strong>Presença/Ausência</strong>: converte em dados binários.</li>
+  </ul>
+  
+  <p><strong>Função wisconsin():</strong> aplica dupla padronização.</p>
+  <pre><code>dune_wis <- wisconsin(dune)</code></pre>
+  
+  <h2>3. Transformações para Análises Multivariadas</h2>
+  <ul>
+    <li>PCA, PCoA e NMDS frequentemente pedem dados padronizados.</li>
+    <li>Evita distorções causadas por espécies dominantes.</li>
+  </ul>
+  <pre><code>dune_hell <- decostand(dune, method = "hellinger")
+  dune_nmds <- metaMDS(dune_hell, distance = "bray")
+  plot(dune_nmds)</code></pre>
+  
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Tipo de Dados</th>
+      <th>Transformação Recomendada</th>
+    </tr>
+    <tr><td>Abundância com zeros</td><td>Hellinger, Log(x+1), Presença/Ausência</td></tr>
+    <tr><td>Biomassa</td><td>Log(x+1), Raiz quadrada</td></tr>
+    <tr><td>Dados ambientais</td><td>Padronização (standardize)</td></tr>
+    <tr><td>Proporções</td><td>Hellinger ou sem transformação</td></tr>
+  </table>
+  
+  <h2>Aplicação</h2>
+  <p>
+    A aplicação prática dessas transformações foi apresentada nos encontros online. Para verificar, consulte as gravações do <em>Power Platform & Analytics</em> - Capacitação em R.
+  </p>
+  
+ 
+    
+
+  <div class="contact">
+
+
+</body>
+</html>

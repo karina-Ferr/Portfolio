@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+<html>
+	<head>
+		<title>Seção 2 - Integrando o R ao Power BI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrando o R ao Power BI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Integrando o R ao Power BI</h1>
+
+  <img src="images/Figura7.jpg" alt="Getting Started" />
+
+  <h2>Contextualização</h2>
+  <p>
+    Nesta seção, exploraremos como integrar o R ao Power BI, ampliando as capacidades de análise e visualização de dados. A integração do R permite que você utilize scripts para realizar análises avançadas, manipular dados e criar visualizações personalizadas diretamente no Power BI.
+  </p>
+  <p>Veremos três aspectos principais:</p>
+  <ul>
+    <li><strong>Configuração do Ambiente e Execução de Scripts do R</strong>: Aprenderemos como preparar o ambiente, executar scripts do R para transformar dados e desenvolver visualizações customizadas, aproveitando ao máximo as capacidades analíticas do R no Power BI.</li>
+    <li><strong>Benefícios da Integração</strong>: Exploraremos as vantagens de combinar o poder do R com o Power BI, incluindo análises avançadas, visualizações especializadas e flexibilidade para manipulação de dados.</li>
+    <li><strong>Limitações da Integração</strong>: Discutiremos as restrições da integração, como limitações de atualização no Power BI Service e questões de desempenho, para que você possa tomar decisões informadas sobre o uso do R no Power BI.</li>
+  </ul>
+
+  <h2>1. Integrando o R ao Power BI</h2>
+  <p>
+    Integrar o <strong>R</strong> ao <strong>Power BI</strong> permite que você use scripts do R para manipular dados, realizar análises estatísticas avançadas e criar visualizações customizadas.
+  </p>
+
+  <h3>1.1 Configurar o Ambiente R:</h3>
+  <ul>
+    <li><strong>Instale o R</strong>: Primeiro, certifique-se de que o R está instalado em sua máquina. Você pode baixá-lo no site oficial do R Project.</li>
+    <li><strong>Instale o RStudio</strong>: Embora não seja obrigatório, o RStudio é um ambiente de desenvolvimento que facilita o trabalho com scripts R.</li>
+  </ul>
+
+  <h3>1.2 Configurar o Power BI para Usar o R:</h3>
+  <ul>
+    <li>Abra o Power BI Desktop.</li>
+    <li>Vá em Arquivo &gt; Opções e Configurações &gt; Opções.</li>
+    <li>Em Scripts do R, selecione o local de instalação do R no campo Detecção de instalação do R.</li>
+    <li>Clique em OK para confirmar.</li>
+  </ul>
+  <img src="images/Figura8.jpg" alt="Configuração do R no Power BI" />
+
+  <h3>1.3 Usar Scripts do R para Transformação de Dados:</h3>
+  <ul>
+    <li>No Power BI, vá para o Editor de Consultas.</li>
+    <li>Em Transformar Dados, clique em Script R.</li>
+    <li>Uma janela será aberta para você digitar seu script R. Esse script será executado para manipular ou transformar os dados conforme necessário.</li>
+  </ul>
+  <img src="images/Figura9.jpg" alt="Script R para transformação de dados" />
+
+  <h3>1.4 Criar Visualizações Personalizadas com o R:</h3>
+  <ul>
+    <li>No Power BI, vá para o painel de Visualizações e selecione o ícone de Gráfico R (ícone R).</li>
+    <li>Uma área de script será exibida na parte inferior. Aqui você pode escrever o código para criar gráficos usando pacotes como <em>ggplot2</em>, <em>plotly</em> ou <em>lattice</em>.</li>
+    <li>Arraste os campos desejados para o painel de valores e ajuste o código R para criar a visualização.</li>
+    <li>O Power BI renderizará a visualização R como uma imagem dentro do relatório.</li>
+  </ul>
+
+  <h2>2. Benefícios da Integração do R ao Power BI:</h2>
+  <ul>
+    <li><strong>Análises Avançadas</strong>: Use o poder analítico do R para estatísticas, machine learning e outras análises que não são possíveis diretamente no Power BI.</li>
+    <li><strong>Visualizações Customizadas</strong>: Crie gráficos altamente personalizados, como mapas de calor, gráficos de densidade e outros que não estão disponíveis por padrão no Power BI.</li>
+    <li><strong>Automação e Eficiência</strong>: Automatize tarefas de transformação complexas e crie fluxos de trabalho de dados mais eficientes.</li>
+  </ul>
+
+  <h2>3. Limitações da Integração do R ao Power BI:</h2>
+  <ul>
+    <li><strong>Apenas no Power BI Desktop</strong>: Os scripts R são executados localmente no Power BI Desktop e não no Power BI Service (online).</li>
+    <li><strong>Imagens Estáticas</strong>: As visualizações do R são renderizadas como imagens estáticas dentro do Power BI, o que limita interatividade como rolar, passar o mouse e ampliar, diferentemente de outros gráficos nativos do Power BI.</li>
+    <li><strong>Processamento Local</strong>: A execução dos scripts R depende do desempenho do seu computador local. Scripts complexos ou grandes volumes de dados podem sobrecarregar o sistema e tornar o Power BI Desktop mais lento ou até mesmo travar.</li>
+    <li><strong>Limitações de Memória</strong>: Visualizações e scripts que processam grandes conjuntos de dados podem consumir muita memória, o que impacta o desempenho do Power BI Desktop, especialmente em máquinas com menos recursos.</li>
+    <li><strong>Pacotes Restritos no Power BI Service</strong>: Embora muitos pacotes populares do R funcionem no Power BI Desktop, alguns pacotes específicos podem não ser compatíveis ou podem precisar de configuração adicional para funcionar corretamente. No Power BI Service, a lista de pacotes suportados é restrita.</li>
+  </ul>
+
+  <h2>Próximos passos</h2>
+  <p>
+    Na próxima seção, você aprenderá a criar visualizações de box plot e dot plot usando a integração do R com o Power BI. Exploraremos como configurar scripts do R para gerar esses gráficos diretamente no Power BI, permitindo análises detalhadas e personalizadas dos dados.
+  </p>
+
+  <h2>Referências de apoio</h2>
+  <p>
+    <a href="https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-r-scripts" target="_blank" rel="noopener noreferrer">
+      Integrando o R ao Power BI - Documentação Oficial Microsoft
+    </a>
+  </p>
+
+</body>
+</html>
