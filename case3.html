@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case 1: Monitoramento de macroinvertebrados aquáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h1 {
+      color: #007E7A;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #005F56;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .icon {
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+  
+  <h2>📌 O que são dados abióticos?</h2>
+  <p>
+    Dados abióticos referem-se a informações sobre os fatores não vivos que influenciam o ambiente e os organismos que nele vivem, incluindo:
+  </p>
+  <ul>
+    <li> Temperatura (ar, água, solo)</li>
+    <li> Umidade relativa do ar e do solo</li>
+    <li> Luminosidade e radiação solar</li>
+    <li> pH do solo e da água</li>
+    <li> Concentração de gases (O₂, CO₂)</li>
+    <li> Salinidade e composição química da água</li>
+    <li> Características físicas do solo (textura, granulação, permeabilidade)</li>
+    <li> Condições climáticas (vento, precipitação, pressão atmosférica)</li>
+  </ul>
+  <p>
+    Esses dados são coletados por meio de estações meteorológicas, sensores ambientais, análises laboratoriais de amostras de solo e água, campanhas de campo e bancos de dados oficiais (INMET, ANA, IBAMA etc.).
+  </p>
+
+  <h2>📌 Como esses dados são analisados?</h2>
+  <p>
+    Empresas de engenharia e ambientais usam técnicas como:
+  </p>
+  <ul>
+    <li> Monitoramento contínuo com sensores e estações ambientais</li>
+    <li> Análises químicas e físicas laboratoriais</li>
+    <li> Modelagem ambiental integrada (clima, solo, água) usando SIG/GIS e sensoriamento remoto</li>
+    <li> Indicadores de qualidade ambiental (ex.: qualidade da água, índices de contaminação)</li>
+    <li> Avaliação de impactos ambientais e simulação de cenários</li>
+    <li> Integração desses dados em sistemas de Business Intelligence para apoiar a tomada de decisão</li>
+  </ul>
+  <p>
+    Além disso, esses dados abióticos são fundamentais para compreender as condições que afetam a fauna, flora e os ecossistemas, e a Arcadis utiliza essas informações em suas soluções digitais para gestão ambiental eficaz e sustentável.
+  </p>
+
+</head>
+<body>
+  <h2>✅ Case 3: Monitoramento da qualidade da água em rios e reservatórios</h2>
+
+<h3>🔹 Contexto:</h3>
+<p>
+Antes da implantação de empreendimentos próximos a corpos d'água, é essencial monitorar parâmetros abióticos da qualidade da água para garantir que não haja impactos ambientais adversos.
+</p>
+
+<h3>🔹 Em R:</h3>
+<ul>
+  <li><strong>Pacotes:</strong> hydroTSM, raster, sf, ggplot2</li>
+  <li><strong>Análises:</strong>
+    <ul>
+      <li>Monitoramento temporal dos parâmetros físico-químicos (pH, temperatura, turbidez, oxigênio dissolvido)</li>
+      <li>Análise de séries temporais para detectar tendências e eventos críticos</li>
+      <li>Mapeamento espacial da qualidade da água</li>
+    </ul>
+  </li>
+  <li><strong>Visualizações:</strong> gráficos de séries temporais, mapas temáticos, boxplots de parâmetros</li>
+</ul>
+
+<h3>🔹 Aplicação empresarial:</h3>
+<p>
+Garantir a conformidade ambiental com normas regulatórias, evitar multas e impactos negativos que possam comprometer a licença ambiental e a imagem da empresa.
+</p>
+<h2>✅ Exemplo de Código em R para o Case 3</h2>
+
+<pre>
+<code>
+# ------------------------------------------------------
+# PACOTES
+# ------------------------------------------------------
+library(hydroTSM)   # séries temporais hidrológicas
+library(raster)     # dados espaciais
+library(sf)         # shapefiles
+library(ggplot2)    # gráficos
+
+# ------------------------------------------------------
+# DADOS SIMULADOS
+# ------------------------------------------------------
+
+# Gerar dados de exemplo: parâmetros físico-químicos
+set.seed(123)
+datas <- seq.Date(from = as.Date("2023-01-01"), to = as.Date("2023-12-31"), by = "month")
+ph <- runif(length(datas), min = 6, max = 8)
+temperatura <- runif(length(datas), min = 20, max = 28)
+turbidez <- runif(length(datas), min = 1, max = 10)
+oxigenio <- runif(length(datas), min = 6, max = 9)
+
+dados_qualidade <- data.frame(
+  Data = datas,
+  pH = ph,
+  Temperatura = temperatura,
+  Turbidez = turbidez,
+  Oxigenio = oxigenio
+)
+
+# ------------------------------------------------------
+# ANÁLISE DE SÉRIES TEMPORAIS
+# ------------------------------------------------------
+
+# Exemplo de gráfico temporal
+ggplot(dados_qualidade, aes(x = Data)) +
+  geom_line(aes(y = pH, color = "pH")) +
+  geom_line(aes(y = Temperatura, color = "Temperatura")) +
+  geom_line(aes(y = Turbidez, color = "Turbidez")) +
+  geom_line(aes(y = Oxigenio, color = "Oxigênio")) +
+  labs(title = "Monitoramento dos parâmetros da água",
+       x = "Data", y = "Valor",
+       color = "Parâmetro") +
+  theme_minimal()
+
+# ------------------------------------------------------
+# MAPA SIMPLES
+# ------------------------------------------------------
+
+# Supondo um shape de reservatório (exemplo fictício)
+# Normalmente você leria com st_read("reservatorio.shp")
+# Aqui vamos gerar um polígono simulado
+pol <- st_sfc(st_polygon(list(matrix(c(
+  -43.5, -22.9,
+  -43.5, -22.8,
+  -43.4, -22.8,
+  -43.4, -22.9,
+  -43.5, -22.9
+), ncol=2, byrow=TRUE))), crs=4326)
+
+# Visualizar o shape
+plot(pol, col = "lightblue", main = "Mapa do Reservatório (exemplo)")
+
+# ------------------------------------------------------
+# EXPORTAÇÃO DE MAPA
+# ------------------------------------------------------
+# Se quiser salvar, pode usar:
+# ggsave("qualidade_agua_temporal.png")
+</code>
+</pre>
+
+
+  <div class="contact">
+    <p><strong>Contato</strong></p>
+    <p><a href="mailto:karina.santos@arcadis.com">Karina Ferreira (karina.santos@arcadis.com)</a></p>
+    <p><a href="mailto:digital.bi@arcadis.com">@DigitalBI (digital.bi@arcadis.com)</a></p>
+  </div>
+
+</body>
+</html>

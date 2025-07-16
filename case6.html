@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case 1: Monitoramento de macroinvertebrados aquáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h1 {
+      color: #007E7A;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #005F56;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .icon {
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h2>✅ Case 6: Modelagem do habitat e riscos ambientais para espécies ameaçadas em função de variáveis abióticas</h2>
+
+<h3>🔹 Contexto:</h3>
+<p>
+Prever áreas favoráveis para espécies ameaçadas considerando tanto suas ocorrências (dados bióticos) quanto as condições ambientais (dados abióticos) para orientar ações de conservação.
+</p>
+
+<h3>🔹 Em R:</h3>
+<ul>
+  <li><strong>Pacotes:</strong> dismo (modelagem de nicho), raster, sp, rgdal</li>
+  <li><strong>Análises:</strong>
+    <ul>
+      <li>Modelagem do nicho ecológico usando dados de ocorrência e variáveis ambientais (temperatura, precipitação, solo)</li>
+      <li>Geração de mapas de probabilidade de presença da espécie</li>
+      <li>Análise de sobreposição do habitat potencial com áreas de risco (obras, desmatamento)</li>
+    </ul>
+  </li>
+  <li><strong>Visualizações:</strong> mapas de probabilidade, gráficos de variáveis ambientais, análises espaciais</li>
+</ul>
+
+<h3>🔹 Aplicação empresarial:</h3>
+<p>
+Evitar danos a espécies ameaçadas durante obras, cumprir legislações ambientais e apoiar programas de recuperação e manejo da fauna e flora.
+</p>
+<h2>✅ Exemplo de Código em R para o Case 6</h2>
+
+<pre>
+<code>
+# ------------------------------------------------------
+# PACOTES
+# ------------------------------------------------------
+library(dismo)     # modelagem de nicho
+library(raster)    # dados espaciais
+library(sp)        # manipulação espacial
+library(rgdal)     # leitura de shapefiles
+
+# ------------------------------------------------------
+# DADOS SIMULADOS
+# ------------------------------------------------------
+
+# ocorrências de espécies (exemplo)
+ocorrencias <- data.frame(
+  lon = runif(20, -50, -45),
+  lat = runif(20, -23, -20)
+)
+coordinates(ocorrencias) <- ~ lon + lat
+
+# variáveis ambientais (raster simulado)
+temp <- raster(matrix(runif(100, 15, 30), nrow=10))
+prec <- raster(matrix(runif(100, 800, 2000), nrow=10))
+
+# ------------------------------------------------------
+# MODELAGEM DE NICHO (exemplo simples)
+# ------------------------------------------------------
+
+# MaxEnt ou GLM — aqui só exemplo
+predictor_stack <- stack(temp, prec)
+model <- bioclim(predictor_stack, ocorrencias)
+
+# ------------------------------------------------------
+# MAPA DE PROBABILIDADE
+# ------------------------------------------------------
+
+mapa_prob <- predict(model, predictor_stack)
+plot(mapa_prob, main="Mapa de probabilidade de ocorrência")
+
+# ------------------------------------------------------
+# SOBREPOSIÇÃO COM ÁREAS DE RISCO (simulado)
+# ------------------------------------------------------
+
+# área de risco (shapefile fictício)
+# normalmente: risco <- readOGR("areas_risco.shp")
+# simulação:
+risco <- as(extent(-49, -46, -22.5, -21), "SpatialPolygons")
+proj4string(risco) <- CRS("+proj=longlat +datum=WGS84")
+
+plot(mapa_prob)
+plot(risco, add=TRUE, border="red", lwd=2)
+
+# ------------------------------------------------------
+# EXPORTAÇÃO
+# ------------------------------------------------------
+# writeRaster(mapa_prob, "mapa_probabilidade.tif")
+</code>
+</pre>
+
+  </body>
+  </html>
+    
+
+  <div class="contact">
+    <p><strong>Contato</strong></p>
+    <p><a href="mailto:karina.santos@arcadis.com">Karina Ferreira (karina.santos@arcadis.com)</a></p>
+    <p><a href="mailto:digital.bi@arcadis.com">@DigitalBI (digital.bi@arcadis.com)</a></p>
+  </div>
+
+</body>
+</html>

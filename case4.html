@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case 1: Monitoramento de macroinvertebrados aquáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h1 {
+      color: #007E7A;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #005F56;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .icon {
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+  
+  <h2>📌 O que são dados abióticos?</h2>
+  <p>
+    Dados abióticos referem-se a informações sobre os fatores não vivos que influenciam o ambiente e os organismos que nele vivem, incluindo:
+  </p>
+  <ul>
+    <li> Temperatura (ar, água, solo)</li>
+    <li> Umidade relativa do ar e do solo</li>
+    <li> Luminosidade e radiação solar</li>
+    <li> pH do solo e da água</li>
+    <li> Concentração de gases (O₂, CO₂)</li>
+    <li> Salinidade e composição química da água</li>
+    <li> Características físicas do solo (textura, granulação, permeabilidade)</li>
+    <li> Condições climáticas (vento, precipitação, pressão atmosférica)</li>
+  </ul>
+  <p>
+    Esses dados são coletados por meio de estações meteorológicas, sensores ambientais, análises laboratoriais de amostras de solo e água, campanhas de campo e bancos de dados oficiais (INMET, ANA, IBAMA etc.).
+  </p>
+
+  <h2>📌 Como esses dados são analisados?</h2>
+  <p>
+    Empresas de engenharia e ambientais usam técnicas como:
+  </p>
+  <ul>
+    <li> Monitoramento contínuo com sensores e estações ambientais</li>
+    <li> Análises químicas e físicas laboratoriais</li>
+    <li> Modelagem ambiental integrada (clima, solo, água) usando SIG/GIS e sensoriamento remoto</li>
+    <li> Indicadores de qualidade ambiental (ex.: qualidade da água, índices de contaminação)</li>
+    <li> Avaliação de impactos ambientais e simulação de cenários</li>
+    <li> Integração desses dados em sistemas de Business Intelligence para apoiar a tomada de decisão</li>
+  </ul>
+  <p>
+    Além disso, esses dados abióticos são fundamentais para compreender as condições que afetam a fauna, flora e os ecossistemas, e a Arcadis utiliza essas informações em suas soluções digitais para gestão ambiental eficaz e sustentável.
+  </p>
+
+</head>
+<body>
+  <h2>✅ Case 4: Avaliação do microclima em áreas de obras e sua influência no conforto térmico</h2>
+
+  <h3>🔹 Contexto:</h3>
+  <p>
+  Em projetos de construção civil, avaliar o microclima da região para entender como fatores abióticos como temperatura, umidade e radiação solar influenciam o conforto térmico dos trabalhadores e o desempenho dos materiais.
+  </p>
+  
+  <h3>🔹 Em R:</h3>
+  <ul>
+    <li><strong>Pacotes:</strong> climate, raster, tidyverse, lubridate</li>
+    <li><strong>Análises:</strong>
+      <ul>
+        <li>Coleta e tratamento de dados meteorológicos locais</li>
+        <li>Cálculo de índices térmicos (ex.: Índice de Temperatura e Umidade - ITU)</li>
+        <li>Modelagem do impacto da radiação solar e vento sobre áreas específicas</li>
+      </ul>
+    </li>
+    <li><strong>Visualizações:</strong> mapas de calor, gráficos de dispersão, dashboards interativos</li>
+  </ul>
+  
+  <h3>🔹 Aplicação empresarial:</h3>
+  <p>
+  Melhorar a segurança e conforto no canteiro de obras, reduzir riscos de doenças relacionadas ao calor e otimizar o planejamento das atividades conforme condições climáticas.
+  </p>
+  
+      </ul>
+    </li>
+  </ul>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Script R - Monitoramento de Macroinvertebrados</title>
+    <style>
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 15px;
+        overflow-x: auto;
+        font-family: Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-radius: 5px;
+      }
+      code {
+        font-family: Consolas, monospace;
+        color: #c7254e;
+        background-color: #f9f2f4;
+      }
+      h2 {
+        font-family: Arial, sans-serif;
+        color: #2c3e50;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <h2>✅ Exemplo de Código em R para o Case 4</h2>
+
+    <pre>
+    <code>
+    # ------------------------------------------------------
+    # PACOTES
+    # ------------------------------------------------------
+    library(tidyverse)
+    library(lubridate)
+    library(raster)
+    # se quiser dados climáticos específicos, pode usar climate ou climextremes
+    
+    # ------------------------------------------------------
+    # DADOS SIMULADOS
+    # ------------------------------------------------------
+    
+    # exemplo de dados meteorológicos
+    datas <- seq.Date(as.Date("2023-01-01"), as.Date("2023-12-31"), by="day")
+    temperatura <- runif(length(datas), min=25, max=40)   # graus Celsius
+    umidade <- runif(length(datas), min=30, max=90)       # %
+    
+    # cálculo do ITU (Índice de Temperatura e Umidade) simples
+    itu <- temperatura + 0.36 * umidade + 41.2
+    
+    dados_microclima <- tibble(
+      Data = datas,
+      Temperatura = temperatura,
+      Umidade = umidade,
+      ITU = itu
+    )
+    
+    # ------------------------------------------------------
+    # VISUALIZAÇÃO DE SÉRIE TEMPORAL
+    # ------------------------------------------------------
+    
+    ggplot(dados_microclima, aes(x=Data, y=ITU)) +
+      geom_line(color="tomato") +
+      labs(title="Índice de Temperatura e Umidade (ITU) ao longo do tempo",
+           x="Data", y="ITU") +
+      theme_minimal()
+    
+    # ------------------------------------------------------
+    # MAPA DE CALOR (simulado)
+    # ------------------------------------------------------
+    
+    # exemplo simples de matriz de temperatura (mapa de calor fictício)
+    matriz_temp <- matrix(runif(100, min=25, max=40), nrow=10)
+    raster_temp <- raster(matriz_temp)
+    plot(raster_temp, main="Mapa de Calor da Temperatura Simulada")
+    
+    # ------------------------------------------------------
+    # DASHBOARD INTERATIVO
+    # ------------------------------------------------------
+    # para dashboards, pode-se usar shiny:
+    # library(shiny)
+    # ... código shiny aqui ...
+    </code>
+    </pre>
+    
+  
+  </body>
+  </html>
+    
+
+  <div class="contact">
+    <p><strong>Contato</strong></p>
+    <p><a href="mailto:karina.santos@arcadis.com">Karina Ferreira (karina.santos@arcadis.com)</a></p>
+    <p><a href="mailto:digital.bi@arcadis.com">@DigitalBI (digital.bi@arcadis.com)</a></p>
+  </div>
+
+</body>
+</html>

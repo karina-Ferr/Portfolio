@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case 1: Monitoramento de macroinvertebrados aquáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h1 {
+      color: #007E7A;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #005F56;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .icon {
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h2>✅ Case 5: Avaliação integrada da biodiversidade e qualidade ambiental em áreas de preservação</h2>
+
+<h3>🔹 Contexto:</h3>
+<p>
+Monitorar a biodiversidade local considerando tanto os organismos vivos (fauna e flora) quanto os fatores ambientais não vivos (clima, solo, água) para entender a saúde e a sustentabilidade dos ecossistemas.
+</p>
+
+<h3>🔹 Em R:</h3>
+<ul>
+  <li><strong>Pacotes:</strong> vegan (análise de comunidade), raster, sp, ggplot2, dplyr</li>
+  <li><strong>Análises:</strong>
+    <ul>
+      <li>Inventários de espécies e cálculo de índices de diversidade</li>
+      <li>Correlação entre variáveis ambientais abióticas (pH, temperatura, umidade) e distribuição de espécies</li>
+      <li>Modelagem do impacto ambiental com técnicas de análise multivariada (PCA, NMDS)</li>
+      <li>Mapas temáticos integrando dados bióticos e abióticos</li>
+    </ul>
+  </li>
+  <li><strong>Visualizações:</strong> gráficos de diversidade, mapas combinados, gráficos de correlação</li>
+</ul>
+
+<h3>🔹 Aplicação empresarial:</h3>
+<p>
+Subsidiar decisões para manejo e conservação ambiental, planejamento de áreas protegidas e mitigação de impactos em empreendimentos.
+</p>
+
+<h2>✅ Exemplo de Código em R para o Case 5</h2>
+
+<pre>
+<code>
+# ------------------------------------------------------
+# PACOTES
+# ------------------------------------------------------
+library(vegan)     # análise de comunidade
+library(raster)    # dados espaciais
+library(sp)        # manipulação espacial
+library(ggplot2)   # visualizações
+library(dplyr)     # manipulação de dados
+
+# ------------------------------------------------------
+# DADOS SIMULADOS
+# ------------------------------------------------------
+
+# simulação de abundâncias de 5 espécies em 10 pontos
+set.seed(123)
+dados_especies <- data.frame(
+  especie1 = sample(0:20, 10, replace=TRUE),
+  especie2 = sample(0:15, 10, replace=TRUE),
+  especie3 = sample(0:10, 10, replace=TRUE),
+  especie4 = sample(0:5, 10, replace=TRUE),
+  especie5 = sample(0:8, 10, replace=TRUE)
+)
+
+# variáveis ambientais simuladas
+variaveis_ambientais <- data.frame(
+  pH = runif(10, 5.5, 8),
+  temperatura = runif(10, 18, 28),
+  umidade = runif(10, 40, 80)
+)
+
+# ------------------------------------------------------
+# ANÁLISE DE DIVERSIDADE
+# ------------------------------------------------------
+
+diversidade <- diversity(dados_especies)
+print(diversidade)
+
+# ------------------------------------------------------
+# PCA (análise multivariada)
+# ------------------------------------------------------
+
+pca <- rda(dados_especies ~ pH + temperatura + umidade, data=variaveis_ambientais)
+plot(pca, main="PCA - Biodiversidade e Variáveis Ambientais")
+
+# ------------------------------------------------------
+# MAPA TEMÁTICO SIMPLES
+# ------------------------------------------------------
+
+# exemplo de raster fictício de biodiversidade
+r <- raster(matrix(runif(100, min=0, max=1), nrow=10))
+plot(r, main="Mapa Temático de Biodiversidade (simulado)")
+
+# ------------------------------------------------------
+# GRÁFICO DE DIVERSIDADE
+# ------------------------------------------------------
+
+diversidade_df <- data.frame(Ponto=1:10, Diversidade=diversidade)
+
+ggplot(diversidade_df, aes(x=Ponto, y=Diversidade)) +
+  geom_bar(stat="identity", fill="forestgreen") +
+  labs(title="Índice de Diversidade por Ponto", x="Ponto", y="Diversidade") +
+  theme_minimal()
+</code>
+</pre>
+
+  </body>
+  </html>
+    
+
+  <div class="contact">
+    <p><strong>Contato</strong></p>
+    <p><a href="mailto:karina.santos@arcadis.com">Karina Ferreira (karina.santos@arcadis.com)</a></p>
+    <p><a href="mailto:digital.bi@arcadis.com">@DigitalBI (digital.bi@arcadis.com)</a></p>
+  </div>
+
+</body>
+</html>

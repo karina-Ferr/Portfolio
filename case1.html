@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case 1: Monitoramento de macroinvertebrados aquáticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.5;
+      color: #333;
+    }
+    h1 {
+      color: #007E7A;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #005F56;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    .icon {
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  </style>
+  <h2>📌 O que são dados bióticos?</h2>
+  <p>
+  Dados bióticos referem-se a informações sobre seres vivos em um ambiente, incluindo:
+  </p>
+  <ul>
+  <li> Fauna (animais, aves, peixes, mamíferos, répteis, anfíbios)</li>
+  <li>Flora (espécies vegetais, fitoplâncton, macrófitas, árvores)</li>
+  <li>Comunidades aquáticas (macroinvertebrados, microrganismos)</li>
+  <li> Relações ecológicas (predação, competição, polinização)</li>
+  <li> Espécies ameaçadas ou endêmicas</li>
+  <li> Cobertura vegetal e habitat</li>
+  </ul>
+  <p>
+  Esses dados são coletados por meio de inventários de fauna e flora, monitoramentos de campo, campanhas sazonais e bancos de dados oficiais (IBGE, ICMBio, MMA etc.).
+  </p>
+
+  <h2>📌 Como esses dados são analisados?</h2>
+  <p>
+  Empresas de engenharia/ambiental usam técnicas como:
+  </p>
+  <ul>
+  <li> Inventários de biodiversidade (campo + laboratório)</li>
+  <li> Modelagem de habitats (usando SIG/GIS e sensoriamento remoto)</li>
+  <li> Indicadores de qualidade ambiental (ex.: índices de integridade biótica)</li>
+  <li> Avaliação de conectividade de fragmentos florestais</li>
+  <li> Identificação de corredores ecológicos</li>
+  </ul>
+  <p>
+  Além disso, esses dados podem ser integrados a Business Intelligence (dashboards) para facilitar a visualização e tomada de decisão, algo que a Arcadis tem usado bastante em soluções digitais de gestão ambiental.
+  </p>
+
+</body>
+</html>
+
+</head>
+<body>
+  <h2>✅ Case 1: Monitoramento de Macroinvertebrados Aquáticos</h2>
+  <h2>🔹 Contexto</h2>
+  <p>
+  Monitorar macroinvertebrados aquáticos é uma prática essencial para avaliar a qualidade ecológica de rios e córregos, principalmente em áreas sujeitas a intervenções de engenharia (como obras de infraestrutura). Esses organismos respondem rapidamente a alterações no ambiente, sendo considerados bioindicadores eficientes.
+  </p>
+  
+  <h2>🎯 Hipóteses do Monitoramento</h2>
+  <ul>
+    <li><strong>Hipótese nula (H0):</strong><br>
+    Não há diferença significativa na composição e diversidade de macroinvertebrados aquáticos entre o período anterior e posterior à intervenção.</li>
+    
+    <li><strong>Hipótese alternativa (H1):</strong><br>
+    Existe diferença significativa na composição e diversidade de macroinvertebrados aquáticos após a implantação da obra, indicando um possível impacto ambiental no ecossistema.</li>
+  </ul>
+  
+  <h3>✍️ Justificativa</h3>
+  <ul>
+    <li>O monitoramento de macroinvertebrados baseia-se no princípio de que essas comunidades são sensíveis a alterações físico-químicas e estruturais do habitat, como aumento de sedimentos, mudanças no fluxo hídrico ou contaminação.</li>
+    <li>Uma redução significativa na diversidade (por exemplo, medida pelo índice de Shannon) ou alterações marcantes na composição de espécies (evidenciadas em técnicas de ordenação como NMDS) podem indicar impactos ambientais.</li>
+    <li>Caso os índices de diversidade permaneçam estáveis e a composição não apresente mudanças expressivas, sustenta-se a hipótese nula, indicando a manutenção da qualidade ambiental.</li>
+  </ul>
+  
+  <h3>🏢 Aplicação Empresarial</h3>
+  <p>
+  Este tipo de análise atende às exigências de licenciamento ambiental, fornecendo evidências sobre a integridade do ecossistema aquático e auxiliando no cumprimento de condicionantes ambientais impostas pelos órgãos reguladores.
+  </p>
+  
+  <h3>💻 Análises no R</h3>
+  <ul>
+    <li><strong>Pacotes recomendados:</strong><br>
+      <ul>
+        <li><code>vegan</code> (análises de diversidade e ordenação)</li>
+        <li><code>ggplot2</code> (visualização gráfica)</li>
+        <li><code>dplyr</code> (manipulação de dados)</li>
+      </ul>
+    </li>
+    
+    <li><strong>Principais análises:</strong><br>
+      <ul>
+        <li>Cálculo de índices de diversidade (Shannon, Simpson)</li>
+        <li>Avaliação de similaridade entre pontos de coleta (ANOSIM)</li>
+        <li>Ordenações multivariadas (NMDS, PCA)</li>
+      </ul>
+    </li>
+    
+    <li><strong>Visualizações:</strong><br>
+      <ul>
+        <li>Gráficos de barras comparando índices de diversidade</li>
+        <li>Mapas de calor para abundâncias</li>
+        <li>Gráficos de ordenação para análise da estrutura das comunidades</li>
+      </ul>
+    </li>
+  </ul>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Script R - Monitoramento de Macroinvertebrados</title>
+    <style>
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 15px;
+        overflow-x: auto;
+        font-family: Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border-radius: 5px;
+      }
+      code {
+        font-family: Consolas, monospace;
+        color: #c7254e;
+        background-color: #f9f2f4;
+      }
+      h2 {
+        font-family: Arial, sans-serif;
+        color: #2c3e50;
+      }
+    </style>
+  </head>
+  <body>
+  
+  <h2>Script em R - Monitoramento de Macroinvertebrados Aquáticos</h2>
+  
+  <pre><code># ------------------------------------------------------
+  # PACOTES
+  # ------------------------------------------------------
+  library(vegan)
+  library(tidyverse)
+  
+  # ------------------------------------------------------
+  # DADOS SIMULADOS - abundâncias de macroinvertebrados
+  # ------------------------------------------------------
+  
+  dados &lt;- tibble(
+    Ponto = rep(c("P1", "P2", "P3"), each = 2),
+    Periodo = rep(c("Antes", "Depois"), 3),
+    Ephemeroptera = c(30,20, 25,18, 15,12),
+    Trichoptera  = c(15,12, 20,16, 10,8),
+    Diptera      = c(40,45, 35,38, 50,55),
+    Coleoptera   = c(10, 8, 12,9, 7,5)
+  )
+  
+  dados
+  
+  # ------------------------------------------------------
+  # CALCULAR ÍNDICE DE SHANNON
+  # ------------------------------------------------------
+  
+  # transforma apenas os dados de abundância
+  abund &lt;- dados %&gt;% select(Ephemeroptera, Trichoptera, Diptera, Coleoptera)
+  
+  # índice de shannon
+  shannon &lt;- diversity(abund, index = "shannon")
+  
+  # adiciona ao dataframe
+  dados &lt;- dados %&gt;% mutate(Shannon = shannon)
+  
+  # visualiza
+  print(dados)
+  
+  # ------------------------------------------------------
+  # GRÁFICO DO ÍNDICE DE SHANNON
+  # ------------------------------------------------------
+  
+  ggplot(dados, aes(x = Ponto, y = Shannon, fill = Periodo)) +
+    geom_bar(stat="identity", position=position_dodge()) +
+    labs(title = "Índice de Shannon de Macroinvertebrados",
+         y = "H'", x = "Ponto de Amostragem") +
+    theme_minimal()
+  
+  # ------------------------------------------------------
+  # NMDS para verificar a similaridade entre amostras
+  # ------------------------------------------------------
+  
+  # transforma abundância em matriz
+  matriz &lt;- as.data.frame(abund)
+  rownames(matriz) &lt;- paste(dados$Ponto, dados$Periodo, sep="_")
+  
+  # NMDS
+  nmds &lt;- metaMDS(matriz, distance = "bray", k=2, trymax=100)
+  
+  # gráfico de NMDS
+  plot(nmds, type="t", display="sites", main="NMDS - Macroinvertebrados")
+  </code></pre>
+  
+  </body>
+  </html>
+  <h2>Acompanhar as análises no Power BI</h2>
+  <header id="header">
+    <a href="https://app.powerbi.com/groups/f4e760f8-4c94-406a-9c65-5350a47e1230/reports/695175b3-9be6-4349-9f78-e203003aac47/ebd44b10d63a8f0453d8?experience=power-bi" class="logo"><strong>Macroinvertebrados aquáticos</strong></a>
+    </header>
+  </ul> 
+
+  <div class="contact">
+    <p><strong>Contato</strong></p>
+    <p><a href="mailto:karina.santos@arcadis.com">Karina Ferreira (karina.santos@arcadis.com)</a></p>
+    <p><a href="mailto:digital.bi@arcadis.com">@DigitalBI (digital.bi@arcadis.com)</a></p>
+  </div>
+
+</body>
+</html>
