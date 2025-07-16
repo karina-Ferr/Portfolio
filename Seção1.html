@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<header id="header">
+	<a href="index.html" class="logo"><strong>Portfólio de Análises Ecológicas</strong></a>
+  </header>
+  
+<html>
+	<head>
+		<title>Seção 1 - Introdução ao R</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrando o R ao Power BI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+	<!DOCTYPE html>
+	<html lang="pt-BR">
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Introdução ao R</title>
+	  <style>
+		pre {
+		  background-color: #f5f5f5;
+		  padding: 10px;
+		  border-radius: 5px;
+		  overflow-x: auto;
+		}
+		code {
+		  font-family: monospace;
+		}
+	  </style>
+	</head>
+	<body>
+	
+	  <h1 style="text-align: center;">Introdução ao R</h1>
+	
+	  <p style="text-align: center;">
+		<img src="images/Figura4.png" alt="Getting Started">
+	  </p>
+	
+	  <ul>
+		<li><a href="https://cran.r-project.org/">Instalação do R</a></li>
+		<li><a href="https://posit.co/download/rstudio-desktop/">Instalação do R Studio</a></li>
+	  </ul>
+	
+	  <h2>Contextualização</h2>
+	  <p>
+		Nesta seção, serão explorados os fundamentos da linguagem R, fundamentais para a manipulação, visualização e análise de dados.
+		Serão abordados os principais conceitos, incluindo:
+		<ol>
+		  <li>o ambiente R e RStudio</li>
+		  <li>os princípios básicos de funcionamento da linguagem R</li>
+		  <li>a estrutura e manipulação de objetos</li>
+		</ol>
+	  </p>
+	
+	  <h2>1. Ambiente R e RStudio</h2>
+	  <p>
+		O <strong>R</strong> é uma ferramenta poderosa que permite a manipulação, análise e visualização de dados, além de possibilitar o desenvolvimento de scripts simples até programas completos.
+		Trata-se de uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, em colaboração com o Bell Labs durante a década de 1980.
+	  </p>
+	  <p>
+		O <strong>RStudio</strong> é um ambiente de desenvolvimento integrado (IDE) projetado para proporcionar uma experiência mais eficiente e intuitiva ao trabalhar com R.
+		Ele oferece uma interface gráfica que facilita a escrita de código, o gerenciamento de projetos, a depuração e a visualização de resultados em R.
+		Amplamente utilizado por cientistas de dados, estatísticos e desenvolvedores, o RStudio se destaca como uma ferramenta essencial para profissionais que utilizam a linguagem R em suas análises e projetos.
+	  </p>
+	  <p>
+		<img src="images/Figura5.png" alt="Getting Started">
+	  </p>
+	  <ul>
+		<li><strong>Source</strong>: Usado para executar código R armazenado em arquivos externos.</li>
+		<li><strong>Console</strong>: Interface principal onde os usuários interagem diretamente com o ambiente R.</li>
+		<li><strong>Enviroments</strong>: Conceito central relacionado à forma como R organiza e gerencia objetos durante a sessão.</li>
+		<li><strong>Output</strong>: Resultado gerado pela execução de comandos ou funções.</li>
+	  </ul>
+	
+	  <h2>2. Funcionamento básico da linguagem R</h2>
+	  <p>
+		Nesta seção, exploraremos os conceitos fundamentais para compreender o funcionamento da linguagem R e a forma como o RStudio é comumente utilizado no dia a dia para executar atividades e análises.
+	  </p>
+	  <ul>
+		<li><strong>Criação de objetos</strong></li>
+	  </ul>
+	  <pre><code>x <- 15  # Atribui o valor 15 ao objeto 'x'
+	nome <- "Ana"  # Atribui a string "Ana" ao objeto 'nome'</code></pre>
+	
+	  <ul>
+		<li><strong>Pacotes</strong> - R tem uma vasta coleção de pacotes que estendem suas funcionalidades.</li>
+	  </ul>
+	  <pre><code>install.packages("ggplot2")  # Instala o pacote
+	library(ggplot2)  # Carrega o pacote</code></pre>
+	
+	  <h2>3. Estrutura e manipulação de objetos</h2>
+	  <ul>
+		<li><strong>Funções</strong></li>
+	  </ul>
+	  <pre><code>soma <- sum(c(1, 2, 3, 4, 5))
+	media <- mean(c(5, 10, 15))
+	
+	minha_funcao <- function(a, b) {
+	  return(a + b)
+	}
+	resultado <- minha_funcao(3, 5)
+	
+	# Condicionais
+	x <- 5
+	if (x > 3) {
+	  print("Maior que 3")
+	} else {
+	  print("Menor ou igual a 3")
+	}
+	
+	# Loop for
+	for (i in 1:5) {
+	  print(i)
+	}
+	
+	# Loop while
+	contador <- 1
+	while (contador <= 5) {
+	  print(contador)
+	  contador <- contador + 1
+	}</code></pre>
+	
+	  <ul>
+		<li><strong>Estrutura dos dados</strong></li>
+	  </ul>
+	  <ul>
+		<li><strong>Vetores</strong></li>
+	  </ul>
+	  <pre><code>numeros <- c(1, 2, 3, 4, 5)</code></pre>
+	  <ul>
+		<li><strong>Matrizes</strong></li>
+	  </ul>
+	  <pre><code>matriz <- matrix(1:6, nrow=2, ncol=3)</code></pre>
+	  <ul>
+		<li><strong>Data frames</strong></li>
+	  </ul>
+	  <pre><code>df <- data.frame(Nome=c("Ana", "Bruno"), Idade=c(23, 35))</code></pre>
+	  <ul>
+		<li><strong>Listas</strong></li>
+	  </ul>
+	  <pre><code>lista <- list(nome="Ana", idade=23, notas=c(8.5, 9.0))</code></pre>
+	
+	  <ul>
+		<li><strong>Manipulando dados</strong></li>
+	  </ul>
+	  <pre><code>library(dplyr)
+	
+	df %>%
+	  filter(Idade > 30) %>%
+	  arrange(Idade)</code></pre>
+	
+	  <ul>
+		<li><strong>Visualização de dados</strong></li>
+	  </ul>
+	  <pre><code>library(ggplot2)
+	ggplot(mtcars, aes(x=mpg, y=hp)) +
+	  geom_point() +
+	  labs(title="Relação entre MPG e HP")</code></pre>
+	
+	  <h2>Importante</h2>
+	  <ul>
+		<li>O pacote deve ser carregado sempre que se abre uma nova seção no R.</li>
+		<li>Não é necessário estar conectado à internet para usar o R.</li>
+	  </ul>
+	
+	  <h2>Próximos passos</h2>
+	  <p>
+		Na próxima seção, você aprenderá a integrar o R ao Power BI. Aproveite seus estudos!
+	  </p>
+	
+	  <h2>Referências de apoio</h2>
+	  <ul>
+		<li><a href="http://www.sthda.com/english/wiki/what-is-r-and-why-learning-r-programming">What is R and Why Learning R Programming</a></li>
+		<li><a href="https://vanderleidebastiani.github.io/tutoriais/Introducao_ao_R.html">Introdução ao R</a></li>
+		<li><a href="https://rpubs.com/felipemadruga/primeiros_passos_r">Primeiros Passos no R</a></li>
+	  </ul>
+	
+	  <hr>
+	
+
+
+</body>
+</html>
